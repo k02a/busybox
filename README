@@ -1,0 +1,58 @@
+Working BusBox 1.20.2 .config file for Android
+-----------------------------------------------
+
+Prerequisites:
+
+-- Working linux environment
+-- Properly installed toolchain for the ARM architecture
+-- BusyBox 1.20.2 source
+-- The provided pre-edited config file
+
+
+
+Confirmed environment:
+
+-- Slackware Linux x86_64 (currently updated 2012-07-06)
+-- cross-compiler-armv5l
+
+
+BusyBox 1.20.2 source:
+http://busybox.net/downloads/busybox-1.20.2.tar.bz2
+
+Where to obtain a copy of the toolchain:
+http://landley.net/aboriginal/downloads/binaries/cross-compiler/cross-compiler-armv5l.tar.bz2
+
+
+
+Compiling instructions
+----------------------
+
+Copy the pre-edited .config-busybox-k02a-v1 file into your unpacked busybox catalog.
+
+Rename the file to .config.
+
+# mv .config-busybox-k02a-v1 .config
+
+If you want to alter the settings, enter the command:
+
+# make menuconfig
+
+Compile it...
+
+# make CROSS_COMPILE=/path to your working toolchain/cross-compiler-armv5l/bin/armv5l-
+
+...wait...
+
+Finally, you will get the file busybox.
+Make a final binary check.
+
+# file busybox
+busybox: ELF 32-bit LSB executable, ARM, version 1 (SYSV), statically linked, stripped
+
+# cp busybox /your destination path/
+
+
+Good luck
+
+k02a
+
